@@ -16,7 +16,7 @@ version = os.getenv("this_version", "master")
 static_url_path = "/" + version + "/static"
 app = flask.Flask(__name__, static_url_path=static_url_path)
 flask_bootstrap.Bootstrap(app)
-db = redis.StrictRedis(host='redis', port=6379, db=0)
+db = redis.StrictRedis(host='redis-headless.default.svc.cluster.local', port=6379, db=0)
 
 
 def render_flavor(flavor, template, data):
